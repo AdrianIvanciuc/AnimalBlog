@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/gallery.js" defer></script>
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <a href="Index.html">Homepage</a>
+        <a href="about.html">About me</a>
+        <a href="form.html">Sign up</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="chatbot.html">ChatBot</a>
+    </div>
+
+    <div id="main">
+
+        <header>
+            <button id="menu-button" onclick=sidebar()>&#9776;</button>
+            <h1>Welcome to my Animal Blog!</h1>
+        </header>
+    
+        <div class="container">
+            <h2>Gallery</h2>
+            <h2 id="source">placeholder</h2>
+            <div class="slider">
+                <button id="prev" onclick=prevSlide()>&#10094;</button>
+                <div class="slides">
+                    <img src="../images/fox.jpg" alt="fox_post1">
+                    <img src="../images/hedgehog.jpg" alt="hedgehog_post1">
+                    <img src="../images/horse.jpg" alt="horse_post1">
+                    <img src="../images/penguin.jpg" alt="penguin_post1">
+                    <img src="../images/komodo.jpg" alt="komodo_post1">
+                </div>
+                <button id="next" onclick=nextSlide()>&#10095;</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; Animal Blog, by John Coon</p> 
+    </footer>
+
+</body>
+
+</html>
