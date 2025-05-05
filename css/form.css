@@ -22,12 +22,6 @@ form {
 }
 
 /* Module */
-input {
-    background-color: #B2D732;
-    color: #092834;
-    font-family: arial, sans-serif;
-    font-size: 1.10rem;
-}
 input[type="radio"] {
     appearance: none;
     width: 1rem;

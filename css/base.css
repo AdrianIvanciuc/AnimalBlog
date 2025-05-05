@@ -34,12 +34,17 @@ body {
     transition: margin-left 1s;
 }
 
-header {
+#header {
     animation: fadeIn 1s forwards;
     background-color: #092834;
     color: #B2D732;
     display: flex;
+    justify-content: space-between;
     opacity: 0;
+}
+.header-element {
+    display: flex;
+    column-gap: 10px;
 }
 
 footer {
@@ -57,6 +62,13 @@ footer {
 }
 
 /* Module */
+input {
+    background-color: #B2D732;
+    color: #092834;
+    font-family: arial, sans-serif;
+    font-size: 1.10rem;
+}
+
 button {
     background-color: #092834;
     color: #B2D732;
@@ -71,7 +83,16 @@ button:hover {
 }
 #menu-button {
     font-size: 2rem;
-    margin-right: 1%;
+}
+#back-to-top-button {
+    font-size: 1.25rem;
+    padding: 1%;
+    text-align: center;
+    display: none; 
+    position: fixed; 
+    bottom: 10px; 
+    right: 10px; 
+    z-index: 99; 
 }
 
 a {

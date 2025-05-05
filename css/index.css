@@ -1,7 +1,18 @@
 /* Base */
+@media screen and (min-width: 1024px) {
+    #search-bar, #search-button {
+        font-size: 1.25rem;
+    }
+}
 @media screen and (max-width: 768px) {
     .blog-content {
         flex-wrap: wrap;
+    }
+    #header {
+        flex-direction: column;
+    }
+    #search-bar, #search-button {
+        font-size: 1.10rem;
     }
 }
 @media screen and (max-width: 480px) {
@@ -10,6 +21,12 @@
     }
     .blog-content {
         flex-wrap: wrap;
+    }
+    #header {
+        flex-direction: column;
+    }
+    #search-bar, #search-button {
+        font-size: 1rem;
     }
 }
 

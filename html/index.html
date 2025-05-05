@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/index.css">
     <script src="../js/nav.js" defer></script>
+    <script src="../js/backToTop.js" defer></script>
+    <script src="../js/searchBar.js" defer></script>
 </head>
 
 <body>
@@ -22,11 +24,19 @@
 
     <div id="main">
 
-        <header>
-            <button id="menu-button" onclick=sidebar()>&#9776;</button>
-            <h1>Welcome to my Animal Blog!</h1>
-        </header>
-    
+        <button id="back-to-top-button" onclick=scrollToTop()>&uarr; Back to top &uarr;</button>
+
+        <div id="header">
+            <div class="header-element">
+                <button id="menu-button" onclick=sidebar()>&#9776;</button>
+                <h1>Welcome to my Animal Blog!</h1>
+            </div>
+            <div class="header-element" style="align-self: center;">
+                <input type="text" id="search-bar" placeholder="Search...">
+                <button id="search-button" onclick=searchPosts()>Search</button>
+            </div>
+        </div>
+
         <div class="blog-post">
             <h2>Showcase: Fox</h2>
             <div class="blog-content">
