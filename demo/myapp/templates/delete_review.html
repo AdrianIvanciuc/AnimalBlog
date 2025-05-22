@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Review</title>
+    {% load static %}
+    <link rel="stylesheet" href={% static 'css/base.css' %}>
+    <link rel="stylesheet" href={% static 'css/form.css' %}>
+    <script src={% static 'js/nav.js' %} defer></script>
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <a href={% url 'index' %}>Homepage</a>
+        <a href={% url 'about' %}>About me</a>
+        <a href={% url 'form' %}>Sign up</a>
+        <a href={% url 'gallery' %}>Gallery</a>
+        <a href={% url 'chatbot' %}>ChatBot</a>
+    </div>
+
+    <div id="main">
+
+        <div id="header">
+                <div class="header-element">
+                    <button id="menu-button" onclick=sidebar()>&#9776;</button>
+                    <h1>Welcome to my Animal Blog!</h1>
+                </div>
+        </div>
+
+        <div class="container">
+            <h2>Delete your review</h2>
+            <p>Are you sure you want to delete the review by {{review.email }}?</p>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p id="button-group">
+                    <button type="submit">Delete Review</button>
+                </p>
+            </form>
+            <a class="secondary-link" href={% url 'index' %}>Cancel</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

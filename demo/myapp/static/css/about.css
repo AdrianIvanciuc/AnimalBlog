@@ -1,0 +1,45 @@
+/* Layout */
+.container {
+    animation: fadeIn 2s forwards;
+    box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 2.5%;
+    opacity: 0;
+    padding: 0%;
+}
+#about-section, .content {
+    box-shadow: none;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0%;
+    padding: 1%;
+}
+#about-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Module */
+.section-title {
+    background-color: #66B032;
+    color: #092834;
+}
+
+img {
+    width: 300px;
+    height: 200px;
+    border: 0.5em solid white;
+    box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    object-fit: contain;
+}
+
+table {
+    padding-bottom: 1%;
+    text-align: center;
+}

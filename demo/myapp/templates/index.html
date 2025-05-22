@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Blog</title>
+    {% load static %}
+    <link rel="stylesheet" href={% static 'css/base.css' %}>
+    <link rel="stylesheet" href={% static 'css/index.css' %}>
+    <script src={% static 'js/nav.js' %} defer></script>
+    <script src={% static 'js/backToTop.js' %} defer></script>
+    <script src={% static 'js/searchBar.js' %} defer></script>
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <a href={% url 'index' %}>Homepage</a>
+        <a href={% url 'about' %}>About me</a>
+        <a href={% url 'form' %}>Sign up</a>
+        <a href={% url 'gallery' %}>Gallery</a>
+        <a href={% url 'chatbot' %}>ChatBot</a>
+    </div>
+
+    <div id="main">
+
+        <button id="back-to-top-button" onclick=scrollToTop()>&uarr; Back to top &uarr;</button>
+
+        <div id="header">
+            <div class="header-element">
+                <button id="menu-button" onclick=sidebar()>&#9776;</button>
+                <h1>Welcome to my Animal Blog!</h1>
+            </div>
+            <div class="header-element" style="align-self: center;">
+                <input type="text" id="search-bar" placeholder="Search...">
+                <button id="search-button" onclick=searchPosts()>Search</button>
+            </div>
+        </div>
+
+        {% for post in posts %}
+            <div class="blog-post">
+                <h2>{{ post.title }}</h2>
+                <div class="blog-content">
+                    <img src={{ post.image.url }}>
+                    <div class="blog-text">
+                        <p>{{ post.text }}</p>
+                    </div>
+                </div>
+                <a class="secondary-link" href={% url 'post_detail' post.id %}>Read more...</a>
+                <h2 class="author">{{ post.author }}</h2>
+            </div>
+        {% endfor %}
+
+        <div class="blog-post">
+            <h2>Reviews</h2>
+            <ul>
+                {% for review in reviews %}
+                <li>
+                    <p><strong>{{ review.email }}</strong> ({{ review.date }})</p>
+                    <p>Rating: {{ review.rating }}</p>
+                    <p>{{ review.comment }}</p>
+                    <a class="secondary-link" href={% url 'update_review' review.id %}>Update Review</a>
+                    <a class="secondary-link" href={% url 'delete_review' review.id %}>Delete Review</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <a class="secondary-link" href={% url 'submit_review' %}>Leave Feedback!</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; Animal Blog, by John Coon</p> 
+    </footer>
+
+</body>
+
+</html>

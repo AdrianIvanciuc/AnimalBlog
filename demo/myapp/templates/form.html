@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    {% load static %}
+    <link rel="stylesheet" href={% static 'css/base.css' %}>
+    <link rel="stylesheet" href={% static 'css/form.css' %}>
+    <script src={% static 'js/nav.js' %} defer></script>
+    <script src={% static 'js/form.js' %} async></script>
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <a href={% url 'index' %}>Homepage</a>
+        <a href={% url 'about' %}>About me</a>
+        <a href={% url 'form' %}>Sign up</a>
+        <a href={% url 'gallery' %}>Gallery</a>
+        <a href={% url 'chatbot' %}>ChatBot</a>
+    </div>
+
+    <div id="main">
+
+        <div id="header">
+            <div class="header-element">
+                <button id="menu-button" onclick=sidebar()>&#9776;</button>
+                <h1>Welcome to my Animal Blog!</h1>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h2>Sign Up Form</h2>
+            <form action="#" method="post" onsubmit="return validateForm()">
+                <p>
+                    <label>Username:</label><br>
+                    <input name="userName" type="text">
+                </p>
+                <p>
+                    <label>Password:</label><br>
+                    <input name="userPswd" type="password">
+                </p>
+                <p>
+                    <label>Confirm Password:</label><br>
+                    <input name="userPswd" type="password">
+                </p>
+                <p>
+                    <label>Email:</label><br>
+                    <input name="userEmail" type="email">
+                </p>
+                <p>
+                    <label>Date of Birth:</label>
+                    <input name="userDOB" type="date">
+                </p>
+                <p id="gender-display">
+                    <label>Gender:</label>
+                    <input type="radio" name="userGender" value="male">
+                    <label>Male</label>
+                    <input type="radio" name="userGender" value="female">
+                    <label>Female</label>
+                    <input type="radio" name="userGender" value="n/a" checked="checked">
+                    <label>Not Specified</label>
+                </p>
+                <p>
+                    <label>Short Description:</label><br>
+                    <textarea name="userDesc" cols="40" rows="5" placeholder="Starting from here!"></textarea>
+                </p>
+                <p>
+                    <label>Upload Profile Picture:</label><br>
+                    <input name="userPfp" type="file">
+                </p>
+                <p id="button-group">
+                    <button type="submit" id="submit-button">Submit</button>
+                    <button type="reset" id="reset-button">Reset</button>
+                </p>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; Animal Blog, by John Coon</p> 
+    </footer>
+
+</body>
+
+</html>

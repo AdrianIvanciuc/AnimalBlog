@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    {% load static %}
+    <link rel="stylesheet" href={% static 'css/base.css' %}>
+    <link rel="stylesheet" href={% static 'css/gallery.css' %}>
+    <script src={% static 'js/nav.js' %} defer></script>
+    <script src={% static 'js/gallery.js' %} defer></script>
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <a href={% url 'index' %}>Homepage</a>
+        <a href={% url 'about' %}>About me</a>
+        <a href={% url 'form' %}>Sign up</a>
+        <a href={% url 'gallery' %}>Gallery</a>
+        <a href={% url 'chatbot' %}>ChatBot</a>
+    </div>
+
+    <div id="main">
+
+        <div id="header">
+            <div class="header-element">
+                <button id="menu-button" onclick=sidebar()>&#9776;</button>
+                <h1>Welcome to my Animal Blog!</h1>
+            </div>
+        </div>
+    
+        <div class="container">
+            <h2>Gallery</h2>
+            <h2 id="source">placeholder</h2>
+            <div class="slider">
+                <button id="prev" onclick=prevSlide()>&#10094;</button>
+                <div class="slides">
+                    <img src={% static 'images/fox.jpg' %} alt="fox_post1">
+                    <img src={% static 'images/hedgehog.jpg' %} alt="hedgehog_post1">
+                    <img src={% static 'images/horse.jpg' %} alt="horse_post1">
+                    <img src={% static 'images/penguin.jpg' %} alt="penguin_post1">
+                    <img src={% static 'images/komodo.jpg' %} alt="komodo_post1">
+                </div>
+                <button id="next" onclick=nextSlide()>&#10095;</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; Animal Blog, by John Coon</p> 
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+/* Base */
+@media screen and (min-width: 1024px) {
+    #search-bar, #search-button {
+        font-size: 1.25rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .blog-content {
+        flex-wrap: wrap;
+    }
+    #header {
+        flex-direction: column;
+    }
+    #search-bar, #search-button {
+        font-size: 1.10rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    img {
+        width: 200px;
+    }
+    .blog-content {
+        flex-wrap: wrap;
+    }
+    #header {
+        flex-direction: column;
+    }
+    #search-bar, #search-button {
+        font-size: 1rem;
+    }
+}
+
+/* Layout */
+.blog-post {
+    animation: fadeIn 2s forwards;
+    box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 2.5%;
+    opacity: 0;
+    padding: 0%;
+}
+.blog-content, .blog-text {
+    padding: 1%;
+}
+.blog-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Module */
+.author {
+    background-color: #66B032;
+    color: #092834;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+img {
+    border: 0.5em solid white;
+    box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 0.5);
+    margin: 1%;
+    object-fit: contain;
+}

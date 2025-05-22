@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href={% static 'css/base.css' %}>
+    <link rel="stylesheet" href={% static 'css/index.css' %}>
+    <script src={% static 'js/nav.js' %} defer></script>
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <a href={% url 'index' %}>Homepage</a>
+        <a href={% url 'about' %}>About me</a>
+        <a href={% url 'form' %}>Sign up</a>
+        <a href={% url 'gallery' %}>Gallery</a>
+        <a href={% url 'chatbot' %}>ChatBot</a>
+    </div>
+
+    <div id="main">
+
+        <div id="header">
+                <div class="header-element">
+                    <button id="menu-button" onclick=sidebar()>&#9776;</button>
+                    <h1>Welcome to my Animal Blog!</h1>
+                </div>
+        </div>
+
+        <div class="blog-post">
+            <h2>{{ post.title }}</h2>
+                <div class="blog-content">
+                <img src={{ post.image.url }}>
+                <div class="blog-text">
+                        <p>{{ post.text }}</p>
+                        <p>{{ post.more_details_for_the_dedicated_page }}</p>
+                </div>
+            </div>
+            <a class="secondary-link" href={% url 'index' %}>Go back...</a>
+            <h2 class="author">{{ post.author }}</h2>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
